@@ -32,8 +32,6 @@ export class SoundManager {
   private createBeepSound(frequency: number, duration: number): HTMLAudioElement {
     // Create audio context for generating sounds
     const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
     
     // Create audio buffer
     const sampleRate = audioContext.sampleRate;
