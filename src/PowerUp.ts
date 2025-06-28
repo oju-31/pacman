@@ -39,7 +39,6 @@ export class PowerUp implements GameEntity {
     
     // Create pulsing effect
     const pulse = Math.sin(this.pulseAnimation) * 0.2 + 1;
-    const currentSize = this.size * pulse;
 
     ctx.save();
     ctx.translate(centerX, centerY);

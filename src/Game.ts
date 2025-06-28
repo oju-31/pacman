@@ -18,7 +18,6 @@ export class Game {
   private gameStarted: boolean = false;
   private scoreElement: HTMLElement;
   private livesElement: HTMLElement;
-  private animationId: number = 0;
   private soundManager: SoundManager;
   private powerUps: PowerUp[] = [];
   private lastPowerUpSpawn: number = 0;
@@ -393,7 +392,7 @@ export class Game {
     this.render();
     
     // Continue the game loop
-    this.animationId = requestAnimationFrame(() => this.gameLoop());
+    requestAnimationFrame(() => this.gameLoop());
   }
 
   private update(): void {
@@ -651,10 +650,5 @@ export class Game {
     this.updateScore();
     this.soundManager.stopBackgroundMusic();
     this.soundManager.playSound('win');
-  }
-
-  private restart(): void {
-    this.resetGame();
-    this.startGame();
   }
 }
