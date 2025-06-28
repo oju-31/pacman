@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        canvas {
+            border: 2px solid #00f;
+            background: #000;
+        }
+        .score {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .controls {
+            margin-top: 10px;
+            text-align: center;
+            color: #ccc;
+        }
+        
+        #game-controls {
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        #game-controls button {
+            margin: 0 5px;
+            transition: all 0.2s ease;
+        }
+        
+        #game-controls button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+        }
+        
+        #game-controls button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="score">Score: <span id="score">0</span></div>
+    <div class="score">Lives: <span id="lives">❤️❤️❤️</span></div>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div class="controls">
+        <p><strong>Game Controls:</strong></p>
+        <p>🎮 Arrow Keys or WASD - Move Pac-Man</p>
+        <p>⏸️ P Key - Pause/Resume Game</p>
+        <p>🔄 R Key - Reset Game</p>
+        <p>🚀 S Key - Start Game</p>
+        <p>🔊 M Key - Toggle Sound On/Off</p>
+        <p><strong>❤️ Collect hearts for extra lives! (Appear every 30 seconds)</strong></p>
+        <p><strong>Collect all pellets to win! Avoid the ghosts!</strong></p>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
